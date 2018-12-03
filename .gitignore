@@ -1,0 +1,19 @@
+!.gitignore
+
+/build
+/dist
+
+/node_modules
+
+
+# makefile target timestamp files
+/all
+/cssdist
+/css
+/css-compile
+/css-prefix
+/js
+/jsdist
+/install-npm
+/bootstrapjs
+/jqueryjs
