@@ -22,6 +22,7 @@
 
 BUILD = $$(pwd)/build
 DIST = $$(pwd)/dist
+IMAGES = $$(pwd)/images
 SRC = $$(pwd)/src
 HTML = $(SRC)/pages
 JS = $(SRC)/js

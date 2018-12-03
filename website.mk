@@ -47,7 +47,7 @@ help :
 
 # overall build targets
 
-all : html css js
+all : html css js static images
 	date > all
 
 .PHONY: rebuild
@@ -64,7 +64,7 @@ clean-build :
 .PHONY: clean-dist
 clean-dist :
 	rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs \
-		cssdist jsdist static
+		cssdist jsdist static imgs
 
 .PHONY: clean-npm
 clean-npm :
@@ -134,6 +134,9 @@ static : dist cssdist jsdist
 	test -d $(STATIC) && rsync -haP --no-whole-file --inplace $(STATIC)/* $(STATIC_DIST)/ || true
 	date > static
 
+images : dist
+	test -d $(IMAGES) && rsync -haP --no-whole-file --inplace $(IMAGES) $(DIST) || true
+	date > imgs
 
 # css targets
 

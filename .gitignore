@@ -5,6 +5,7 @@
 
 /node_modules
 
+/images
 
 # makefile target timestamp files
 /all
@@ -18,3 +19,4 @@
 /bootstrapjs
 /jqueryjs
 /static
+/imgs # use abbr name to avoid collision with images dir
