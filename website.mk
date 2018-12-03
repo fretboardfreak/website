@@ -106,22 +106,22 @@ cssdist : dist
 # note: the dev dependencies have been separated into individual commands here
 # to avoid maxing out my proxy server's open connection limits.
 install :
-	npm install -D @babel/core
-	npm install -D @babel/plugin-proposal-class-properties
-	npm install -D @babel/preset-env
-	npm install -D autoprefixer
-	npm install -D babel-eslint
-	npm install -D bootstrap
-	npm install -D eslint
-	npm install -D jquery
-	npm install -D node-sass
-	npm install -D popper.js
-	npm install -D postcss-cli
-	npm install -D rollup
-	npm install -D rollup-plugin-babel
-	npm install -D rollup-plugin-inject
-	npm install -D rollup-plugin-node-resolve
-	npm install -D stylelint
+	npm --prefix $(NODE_PKG) install -D @babel/core
+	npm --prefix $(NODE_PKG) install -D @babel/plugin-proposal-class-properties
+	npm --prefix $(NODE_PKG) install -D @babel/preset-env
+	npm --prefix $(NODE_PKG) install -D autoprefixer
+	npm --prefix $(NODE_PKG) install -D babel-eslint
+	npm --prefix $(NODE_PKG) install -D bootstrap
+	npm --prefix $(NODE_PKG) install -D eslint
+	npm --prefix $(NODE_PKG) install -D jquery
+	npm --prefix $(NODE_PKG) install -D node-sass
+	npm --prefix $(NODE_PKG) install -D popper.js
+	npm --prefix $(NODE_PKG) install -D postcss-cli
+	npm --prefix $(NODE_PKG) install -D rollup
+	npm --prefix $(NODE_PKG) install -D rollup-plugin-babel
+	npm --prefix $(NODE_PKG) install -D rollup-plugin-inject
+	npm --prefix $(NODE_PKG) install -D rollup-plugin-node-resolve
+	npm --prefix $(NODE_PKG) install -D stylelint
 	date > install
 
 

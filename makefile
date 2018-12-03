@@ -30,6 +30,7 @@ CSS = $(SRC)/css
 CSS_BUILD = $(BUILD)/css
 CSS_DIST = $(DIST)/css
 NODE = $$(pwd)/node_modules
+NODE_PKG = $$(pwd)
 BOOTSTRAP_SCSS = $(NODE)/bootstrap/scss
 BOOTSTRAP_JS = $(NODE)/bootstrap/dist/js/bootstrap.min.js
 JQUERY_JS = $(NODE)/jquery/dist/jquery.min.js
