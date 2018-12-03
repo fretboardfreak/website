@@ -63,7 +63,8 @@ clean-build :
 
 .PHONY: clean-dist
 clean-dist :
-	rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs cssdist jsdist
+	rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs \
+		cssdist jsdist static
 
 .PHONY: clean-npm
 clean-npm :
@@ -128,6 +129,10 @@ install :
 # html targets
 html : dist
 	find $(HTML) -iname "*.html" -exec rsync -haP --no-whole-file --inplace '{}' $(DIST)/ ';'
+
+static : dist cssdist jsdist
+	test -d $(STATIC) && rsync -haP --no-whole-file --inplace $(STATIC)/* $(STATIC_DIST)/ || true
+	date > static
 
 
 # css targets
