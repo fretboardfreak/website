@@ -19,4 +19,6 @@
 /bootstrapjs
 /jqueryjs
 /static
-/imgs # use abbr name to avoid collision with images dir
+
+# use abbr name to avoid collision with images dir
+/imgs
