@@ -133,11 +133,11 @@ html : dist
 # css targets
 
 css-compile : build
-	for stylesheet in $$(find $(CSS) -iname "*.scss"); do npx node-sass --include-path $(BOOTSTRAP_SCSS) $$stylesheet -o $(CSS_BUILD); done
+	for stylesheet in $$(find $(CSS) -iname "*.scss"); do npx --prefix $(NODE_PKG) node-sass --include-path $(BOOTSTRAP_SCSS) $$stylesheet -o $(CSS_BUILD); done
 	date > css-compile
 
 css-prefix : dist cssdist css-compile
-	npx postcss --use autoprefixer --dir $(CSS_DIST) $(CSS_BUILD)
+	npx --prefix $(NODE_PKG) postcss --use autoprefixer --dir $(CSS_DIST) $(CSS_BUILD)
 	date > css-prefix
 
 css : css-compile css-prefix
@@ -155,7 +155,7 @@ jquery : jsdist
 	date > jqueryjs
 
 js : jsdist bootstrap jquery
-	npx rollup -c
+	npx --prefix $(NODE_PKG) rollup -c
 	date > js
 
 .PHONY: jslint
