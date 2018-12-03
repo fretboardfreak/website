@@ -63,7 +63,7 @@ clean-build :
 
 .PHONY: clean-dist
 clean-dist :
-	rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs cssdist jsdist
+	sudo rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs cssdist jsdist
 
 .PHONY: clean-npm
 clean-npm :
@@ -133,11 +133,11 @@ html : dist
 # css targets
 
 css-compile : build
-	for stylesheet in $$(find $(CSS) -iname "*.scss"); do $(NODE)/node-sass/bin/node-sass --include-path $(BOOTSTRAP_SCSS) $$stylesheet -o $(CSS_BUILD); done
+	for stylesheet in $$(find $(CSS) -iname "*.scss"); do npx node-sass --include-path $(BOOTSTRAP_SCSS) $$stylesheet -o $(CSS_BUILD); done
 	date > css-compile
 
 css-prefix : dist cssdist css-compile
-	$(NODE)/postcss-cli/bin/postcss --use autoprefixer --dir $(CSS_DIST) $(CSS_BUILD)
+	npx postcss --use autoprefixer --dir $(CSS_DIST) $(CSS_BUILD)
 	date > css-prefix
 
 css : css-compile css-prefix
@@ -155,7 +155,7 @@ jquery : jsdist
 	date > jqueryjs
 
 js : jsdist bootstrap jquery
-	$(NODE)/rollup/bin/rollup -c
+	npx rollup -c
 	date > js
 
 .PHONY: jslint
