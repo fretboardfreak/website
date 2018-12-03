@@ -77,7 +77,7 @@ clean-build :
 
 .PHONY: clean-dist
 clean-dist :
-	sudo rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs
+	sudo rm -rf $(DIST) css-prefix css all js jqueryjs bootstrapjs cssdist jsdist
 
 .PHONY: clean-npm
 clean-npm :
