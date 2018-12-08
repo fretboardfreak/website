@@ -1,5 +1,8 @@
 /*
- * website.js
+ * Main JS Entrypoint
+ *
+ * Note:
+ * Your customizations should be imported into this file.
  *
  */
 
