@@ -57,7 +57,7 @@ rebuild : clean all
 
 .PHONY: run
 run : all
-	sudo docker --rm -p 80:80 -v $(DIST):/usr/share/nginx/html nginx
+	sudo docker run --rm -p 80:80 -v $(DIST):/usr/share/nginx/html nginx
 
 # clean targets
 
