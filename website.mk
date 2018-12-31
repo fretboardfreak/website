@@ -28,6 +28,7 @@ help :
 	@echo "  Targets:"
 	@echo "    all : Build and compile all project components."
 	@echo "    rebuild : Clean, Build and compile all project components."
+	@echo "    run : Run an NGINX docker image to test the website locally."
 	@echo "    clean : Clean all built files (clean-dist, clean-build)."
 	@echo "    clean-all : Clean all files, including installed packages."
 	@echo "    clean-build : Remove the build dir."
@@ -54,6 +55,9 @@ all : html css js static images
 rebuild : clean all
 	@echo "rebuild target"
 
+.PHONY: run
+run : all
+	sudo docker --rm -p 80:80 -v $(DIST_DIR):/usr/share/nginx/html nginx
 
 # clean targets
 
