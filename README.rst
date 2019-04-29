@@ -3,6 +3,8 @@ Website
 =======
 
 :author: Curtis Sand <curtissand@gmail.com>
+:repo: https://bitbucket.org/fret/website.git
+:mirror repo: https://github.com/fretboardfreak/website.git
 
 :lastedit: 20181202-1330
 
